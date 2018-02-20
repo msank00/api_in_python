@@ -20,3 +20,426 @@
 2018-02-16 11:14:35,732 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
 2018-02-16 11:14:35,738 INFO: Number of recorde: 3 [in predict_API.py:64]
 2018-02-16 11:14:35,740 INFO: ----- REQUEST SERVED ----- [in predict_API.py:47]
+2018-02-19 12:32:12,455 INFO: SERVER STARTED ON  127.0.0.1:5000 [in predict_API.py:113]
+2018-02-19 12:34:02,627 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:34:02,628 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:34:02,628 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:34:02,628 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:34:02,628 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:34:02,635 INFO: Number of recorde: 4 [in predict_API.py:66]
+2018-02-19 12:34:02,635 ERROR: message [in predict_API.py:74]
+Traceback (most recent call last):
+  File "predict_API.py", line 69, in predictionModule
+    outdf["UID"] = inputData["UID"]
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 2139, in __getitem__
+    return self._getitem_column(key)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 2146, in _getitem_column
+    return self._get_item_cache(key)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/generic.py", line 1842, in _get_item_cache
+    values = self._data.get(item)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/internals.py", line 3843, in get
+    loc = self.items.get_loc(item)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/indexes/base.py", line 2527, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 117, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 139, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1265, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1273, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'UID'
+2018-02-19 12:34:02,655 ERROR: message [in predict_API.py:51]
+Traceback (most recent call last):
+  File "predict_API.py", line 42, in predictionUtility
+    output = predictionModule(contentdf)
+  File "predict_API.py", line 75, in predictionModule
+    raise Exception(e)
+Exception: 'UID'
+2018-02-19 12:34:02,655 ERROR: Exception on /predict [POST] [in /home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "predict_API.py", line 52, in predictionUtility
+    raise Exception(e)
+Exception: 'UID'
+2018-02-19 12:34:27,305 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:34:27,305 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:34:27,305 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:34:27,305 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:34:27,305 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:34:27,307 ERROR: message [in predict_API.py:51]
+Traceback (most recent call last):
+  File "predict_API.py", line 39, in predictionUtility
+    contentdf = pd.read_json(content,orient='records')
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 366, in read_json
+    return json_reader.read()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 467, in read
+    obj = self._get_object_parser(self.data)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 484, in _get_object_parser
+    obj = FrameParser(json, **kwargs).parse()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 576, in parse
+    self._parse_no_numpy()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 806, in _parse_no_numpy
+    loads(json, precise_float=self.precise_float), dtype=None)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 330, in __init__
+    mgr = self._init_dict(data, index, columns, dtype=dtype)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 461, in _init_dict
+    return _arrays_to_mgr(arrays, data_names, index, columns, dtype=dtype)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 6163, in _arrays_to_mgr
+    index = extract_index(arrays)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 6202, in extract_index
+    raise ValueError('If using all scalar values, you must pass'
+ValueError: If using all scalar values, you must pass an index
+2018-02-19 12:34:27,308 ERROR: Exception on /predict [POST] [in /home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "predict_API.py", line 52, in predictionUtility
+    raise Exception(e)
+Exception: If using all scalar values, you must pass an index
+2018-02-19 12:36:22,060 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:36:22,061 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:36:22,061 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:36:22,061 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:36:22,061 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:36:22,066 INFO: Number of recorde: 4 [in predict_API.py:66]
+2018-02-19 12:36:22,066 ERROR: message [in predict_API.py:74]
+Traceback (most recent call last):
+  File "predict_API.py", line 69, in predictionModule
+    outdf["UID"] = inputData["UID"]
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 2139, in __getitem__
+    return self._getitem_column(key)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 2146, in _getitem_column
+    return self._get_item_cache(key)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/generic.py", line 1842, in _get_item_cache
+    values = self._data.get(item)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/internals.py", line 3843, in get
+    loc = self.items.get_loc(item)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/indexes/base.py", line 2527, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 117, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 139, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1265, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1273, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'UID'
+2018-02-19 12:36:22,067 ERROR: message [in predict_API.py:51]
+Traceback (most recent call last):
+  File "predict_API.py", line 42, in predictionUtility
+    output = predictionModule(contentdf)
+  File "predict_API.py", line 75, in predictionModule
+    raise Exception(e)
+Exception: 'UID'
+2018-02-19 12:36:22,067 ERROR: Exception on /predict [POST] [in /home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "predict_API.py", line 52, in predictionUtility
+    raise Exception(e)
+Exception: 'UID'
+2018-02-19 12:36:32,396 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:36:32,396 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:36:32,396 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:36:32,396 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:36:32,396 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:36:32,405 INFO: Number of recorde: 4 [in predict_API.py:66]
+2018-02-19 12:36:32,405 ERROR: message [in predict_API.py:74]
+Traceback (most recent call last):
+  File "predict_API.py", line 69, in predictionModule
+    outdf["UID"] = inputData["UID"]
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 2139, in __getitem__
+    return self._getitem_column(key)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 2146, in _getitem_column
+    return self._get_item_cache(key)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/generic.py", line 1842, in _get_item_cache
+    values = self._data.get(item)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/internals.py", line 3843, in get
+    loc = self.items.get_loc(item)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/indexes/base.py", line 2527, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 117, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 139, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1265, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1273, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'UID'
+2018-02-19 12:36:32,412 ERROR: message [in predict_API.py:51]
+Traceback (most recent call last):
+  File "predict_API.py", line 42, in predictionUtility
+    output = predictionModule(contentdf)
+  File "predict_API.py", line 75, in predictionModule
+    raise Exception(e)
+Exception: 'UID'
+2018-02-19 12:36:32,413 ERROR: Exception on /predict [POST] [in /home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "predict_API.py", line 52, in predictionUtility
+    raise Exception(e)
+Exception: 'UID'
+2018-02-19 12:36:44,357 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:36:44,357 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:36:44,357 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:36:44,357 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:36:44,357 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:36:44,366 INFO: Number of recorde: 4 [in predict_API.py:66]
+2018-02-19 12:36:44,367 ERROR: message [in predict_API.py:74]
+Traceback (most recent call last):
+  File "predict_API.py", line 69, in predictionModule
+    outdf["UID"] = inputData["UID"]
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 2139, in __getitem__
+    return self._getitem_column(key)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 2146, in _getitem_column
+    return self._get_item_cache(key)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/generic.py", line 1842, in _get_item_cache
+    values = self._data.get(item)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/internals.py", line 3843, in get
+    loc = self.items.get_loc(item)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/indexes/base.py", line 2527, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 117, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 139, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1265, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1273, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'UID'
+2018-02-19 12:36:44,374 ERROR: message [in predict_API.py:51]
+Traceback (most recent call last):
+  File "predict_API.py", line 42, in predictionUtility
+    output = predictionModule(contentdf)
+  File "predict_API.py", line 75, in predictionModule
+    raise Exception(e)
+Exception: 'UID'
+2018-02-19 12:36:44,375 ERROR: Exception on /predict [POST] [in /home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "predict_API.py", line 52, in predictionUtility
+    raise Exception(e)
+Exception: 'UID'
+2018-02-19 12:39:00,087 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:39:00,087 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:39:00,087 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:39:00,088 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:39:00,088 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:39:00,088 ERROR: message [in predict_API.py:51]
+Traceback (most recent call last):
+  File "predict_API.py", line 39, in predictionUtility
+    contentdf = pd.read_json(content,orient='records')
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 366, in read_json
+    return json_reader.read()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 467, in read
+    obj = self._get_object_parser(self.data)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 484, in _get_object_parser
+    obj = FrameParser(json, **kwargs).parse()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 576, in parse
+    self._parse_no_numpy()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/io/json/json.py", line 806, in _parse_no_numpy
+    loads(json, precise_float=self.precise_float), dtype=None)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 330, in __init__
+    mgr = self._init_dict(data, index, columns, dtype=dtype)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 461, in _init_dict
+    return _arrays_to_mgr(arrays, data_names, index, columns, dtype=dtype)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 6163, in _arrays_to_mgr
+    index = extract_index(arrays)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/pandas/core/frame.py", line 6202, in extract_index
+    raise ValueError('If using all scalar values, you must pass'
+ValueError: If using all scalar values, you must pass an index
+2018-02-19 12:39:00,089 ERROR: Exception on /predict [POST] [in /home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "predict_API.py", line 52, in predictionUtility
+    raise Exception(e)
+Exception: If using all scalar values, you must pass an index
+2018-02-19 12:39:15,933 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:39:15,933 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:39:15,933 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:39:15,933 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:39:15,933 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:39:15,939 INFO: Number of recorde: 1 [in predict_API.py:66]
+2018-02-19 12:39:15,941 INFO: ----- REQUEST SERVED ----- [in predict_API.py:47]
+2018-02-19 12:40:32,398 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:40:32,399 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:40:32,399 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:40:32,399 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:40:32,399 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:40:32,399 ERROR: message [in predict_API.py:51]
+Traceback (most recent call last):
+  File "predict_API.py", line 37, in predictionUtility
+    content = request.json #get_json(silent=True)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/wrappers.py", line 108, in json
+    return self.get_json()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/wrappers.py", line 162, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/wrappers.py", line 182, in on_json_loading_failed
+    raise BadRequest()
+BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2018-02-19 12:40:32,405 ERROR: Exception on /predict [POST] [in /home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "predict_API.py", line 52, in predictionUtility
+    raise Exception(e)
+Exception: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2018-02-19 12:40:58,719 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:40:58,719 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:40:58,719 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:40:58,719 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:40:58,719 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:40:58,720 ERROR: message [in predict_API.py:51]
+Traceback (most recent call last):
+  File "predict_API.py", line 37, in predictionUtility
+    content = request.json #get_json(silent=True)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/wrappers.py", line 108, in json
+    return self.get_json()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/wrappers.py", line 162, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/wrappers.py", line 182, in on_json_loading_failed
+    raise BadRequest()
+BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2018-02-19 12:40:58,720 ERROR: Exception on /predict [POST] [in /home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "predict_API.py", line 52, in predictionUtility
+    raise Exception(e)
+Exception: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2018-02-19 12:41:11,667 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:41:11,667 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:41:11,667 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:41:11,667 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:41:11,667 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:41:11,667 ERROR: message [in predict_API.py:51]
+Traceback (most recent call last):
+  File "predict_API.py", line 37, in predictionUtility
+    content = request.json #get_json(silent=True)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/wrappers.py", line 108, in json
+    return self.get_json()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/wrappers.py", line 162, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/wrappers.py", line 182, in on_json_loading_failed
+    raise BadRequest()
+BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2018-02-19 12:41:11,667 ERROR: Exception on /predict [POST] [in /home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/s1bfwd/miniconda2/envs/msank_env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "predict_API.py", line 52, in predictionUtility
+    raise Exception(e)
+Exception: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2018-02-19 12:41:30,387 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:41:30,388 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:41:30,388 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:41:30,388 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:41:30,388 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:41:30,394 INFO: Number of recorde: 1 [in predict_API.py:66]
+2018-02-19 12:41:30,396 INFO: ----- REQUEST SERVED ----- [in predict_API.py:47]
+2018-02-19 12:42:01,049 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:42:01,049 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:42:01,049 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:42:01,049 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:42:01,049 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:42:01,055 INFO: Number of recorde: 2 [in predict_API.py:66]
+2018-02-19 12:42:01,058 INFO: ----- REQUEST SERVED ----- [in predict_API.py:47]
+2018-02-19 12:42:49,974 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:42:49,974 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:42:49,974 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:42:49,974 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:42:49,974 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:42:49,981 INFO: Number of recorde: 2 [in predict_API.py:66]
+2018-02-19 12:42:49,983 INFO: ----- REQUEST SERVED ----- [in predict_API.py:47]
+2018-02-19 12:43:16,107 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:43:16,107 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:43:16,107 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:43:16,108 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:43:16,108 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:43:16,118 INFO: Number of recorde: 2 [in predict_API.py:66]
+2018-02-19 12:43:16,120 INFO: ----- REQUEST SERVED ----- [in predict_API.py:47]
+2018-02-19 12:43:37,666 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:43:37,666 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:43:37,666 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:43:37,666 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:43:37,666 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:43:37,671 INFO: Number of recorde: 2 [in predict_API.py:66]
+2018-02-19 12:43:37,673 INFO: ----- REQUEST SERVED ----- [in predict_API.py:47]
+2018-02-19 12:44:23,392 INFO: +++++ REQUEST RECEIVED +++++ [in predict_API.py:24]
+2018-02-19 12:44:23,392 INFO: REQUEST METHOD: POST [in predict_API.py:30]
+2018-02-19 12:44:23,392 INFO: REQUEST API: /predict [in predict_API.py:31]
+2018-02-19 12:44:23,392 INFO: HTTP USER AGENT: curl/7.47.0 [in predict_API.py:32]
+2018-02-19 12:44:23,392 INFO: CLIENT ADDRESS: 127.0.0.1 [in predict_API.py:33]
+2018-02-19 12:44:23,398 INFO: Number of recorde: 4 [in predict_API.py:66]
+2018-02-19 12:44:23,400 INFO: ----- REQUEST SERVED ----- [in predict_API.py:47]
