@@ -43,9 +43,9 @@ def notifyapiUtility():
         #print content
         #print type(content)
 
-        print content['task_type']
-        print content['status_message']
-        print content['unix_time']
+        print(content['task_type'])
+        print(content['status_message'])
+        print(content['unix_time'])
        
         # passing data to prediction module
         #output = predictionModule(contentdf)

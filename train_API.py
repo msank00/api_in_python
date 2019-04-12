@@ -26,30 +26,30 @@ app = Flask(__name__)
 
 def postStatus(a_callbackURL,a_status_message,a_task_type,a_unix_time):
 
-	callbackAddress = a_callbackURL#'http://localhost:5020/notify'
-	task_type = a_task_type #"preprocessing"
-        status_message = a_status_message #"OK"
-        unix_time = a_unix_time #1234
+    callbackAddress = a_callbackURL#'http://localhost:5020/notify'
+    task_type = a_task_type #"preprocessing"
+    status_message = a_status_message #"OK"
+    unix_time = a_unix_time #1234
 
-        payload_notify = {}
-        payload_notify['task_type'] = task_type
-        payload_notify['status_message']=status_message
-        payload_notify['unix_time']=unix_time
+    payload_notify = {}
+    payload_notify['task_type'] = task_type
+    payload_notify['status_message']=status_message
+    payload_notify['unix_time']=unix_time
 
 
 
-	#headers = {"Content-Type": "application/json"}
-	headers = {"Content-Type": "application/json","Accept": "application/json"}
-	response = req.post(callbackAddress,data = json.dumps(payload_notify), headers = headers)
-	callbackAPIstatus = "callback api status code:"+ str(response.status_code)
-	print callbackAPIstatus
-        app.logger.info(callbackAPIstatus)
-        #print "******************"
-	#print "callback response headers:"+ str(response.headers)
-	#print "******************"
-	#print "callback response content:"+ str(response.text)
-	#print response.text
-        return
+    #headers = {"Content-Type": "application/json"}
+    headers = {"Content-Type": "application/json","Accept": "application/json"}
+    response = req.post(callbackAddress,data = json.dumps(payload_notify), headers = headers)
+    callbackAPIstatus = "callback api status code:"+ str(response.status_code)
+    print(callbackAPIstatus)
+    app.logger.info(callbackAPIstatus)
+    #print "******************"
+    #print "callback response headers:"+ str(response.headers)
+    #print "******************"
+    #print "callback response content:"+ str(response.text)
+    #print response.text
+    return
 
 
 
@@ -141,9 +141,9 @@ def preprocessingModule(callbackURL):
         # all the preprocessing algorithm function calls goes here
         # ====================================================
     
-        print "Inside Preprocessing Task...\nIt may take some time..."
+        print("Inside Preprocessing Task...\nIt may take some time...")
         for i in range(1,10):
-            print i
+            print(i)
             time.sleep(1)
         
         app.logger.info("Preprocessing Successful")
@@ -153,10 +153,10 @@ def preprocessingModule(callbackURL):
         status_message = "OK"
         unix_time = getUnixTime()
         
-        print task_type
-        print status_message
-        print unix_time
-        print callbackURL
+        print(task_type)
+        print(status_message)
+        print(unix_time)
+        print(callbackURL)
 
         # posting status to callback api
         postStatus(callbackURL,status_message,task_type,unix_time)
@@ -178,9 +178,9 @@ def trainingModule(callbackURL):
         # all the training algorithm function calls goes here
         # ====================================================
     
-        print "Inside Training Module...\nIt may take some time..."
+        print("Inside Training Module...\nIt may take some time...")
         for i in range(1,15):
-            print i
+            print(i)
             time.sleep(1)
         
         app.logger.info("Training Successful")
@@ -190,10 +190,10 @@ def trainingModule(callbackURL):
         status_message = "OK"
         unix_time = getUnixTime()
         
-        print task_type
-        print status_message
-        print unix_time
-        print callbackURL
+        print(task_type)
+        print(status_message)
+        print(unix_time)
+        print(callbackURL)
 
         # posting status to callback api
         postStatus(callbackURL,status_message,task_type,unix_time)
@@ -216,10 +216,10 @@ def trayingModule(inputData) :
         # ====================================================
         # all the preprocessing algorithm function calls goes here
         # ====================================================
-        print inputData
-        print "Inside Traying Module...\nIt may take some time..."
+        print(inputData)
+        print("Inside Traying Module...\nIt may take some time...")
         time.sleep(5)
-        print "Traying Successful"
+        print("Traying Successful")
          
     except Exception as e:
         app.logger.exception("message")

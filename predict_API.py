@@ -59,7 +59,7 @@ def predictionModule(inputData) :
         # ====================================================
         # all the prediction algorithm function calls goes here
         # ====================================================
-        print inputData
+        print(inputData)
 
         # dummy logic to get random prediction score
         n = inputData.shape[0]
