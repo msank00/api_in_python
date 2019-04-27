@@ -4,12 +4,12 @@
 This meta project consists of sample script which can be used to create machine learning API in python which includes
 separate template for creating `preprocessing`, `training` and `prediction` API along with logging and basic error handling facility. 
 
-# Package Information
+## Package Information
 + package `flask`: for creating api
 + package `logging`: for capturing the log
 + package `threading`: for creating asynchronous function call for preprocessing and training
 
-# Main Scripts
+## Main Scripts
 
 + The `predict_API.py` holds the actual code for prediciton module for the `/predict` api.
 + The `train_API.py` holds the code for preprocessing and training module for the apis `/preprocess` and `/train`
@@ -17,7 +17,7 @@ separate template for creating `preprocessing`, `training` and `prediction` API 
 + The `statr.sh` scripts can be used to start all the server at one go
 
 
-# Start the PREDICTION SERVER (/predict API):
+## Start the PREDICTION SERVER (/predict API):
 
 + `python predict_API.R` OR
   + use the `start.sh` file, run it as follows:
@@ -31,7 +31,7 @@ separate template for creating `preprocessing`, `training` and `prediction` API 
 	+ `/predict` is the prediction API end point
 	+ You may need to update the `port number` in the above curl command
 
-# Start the Training SERVER (/preprocess and /train API):
+## Start the Training SERVER (/preprocess and /train API):
   +  ` python train_API.py` OR
   + use the `start.sh` file and run `./start.sh`
 + As training and preprocessing can take several minutes, they should be called asynchronously using python package `threading` followed by a post call to the `callback API` for sending the status of preprocessing and training.
