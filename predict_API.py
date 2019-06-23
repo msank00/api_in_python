@@ -9,7 +9,7 @@ import argparse
 # setting optional argument parser
 parser = argparse.ArgumentParser(description='Get Hosting parameters')
 parser.add_argument('--optHost', type=str,  help='An optional Host Name')
-parser.add_argument('--optPort', type=int,  help='An optional port Number')
+parser.add_argument('--optPort', type=str,  help='An optional port Number')
 parser.add_argument('--logLevel', type=str,  help='Logging level')
 args = parser.parse_args()
 
@@ -104,13 +104,16 @@ if __name__ == '__main__':
 
     # change port or ip as per your choice
     ip = "127.0.0.1"
-    port = 5000
+    port = "5000"
 
     logPath = 'python_prediction_API_server.log' 
     configLogging(logPath)
 
+    if args.optHost and len(args.optHost)>0:
+        ip = args.optHost
+    if args.optPort and len(args.optPort)>0:
+        port = args.optPort
 
-
-    app.logger.info("SERVER STARTED ON  %s:%s"%(ip,port))
+    app.logger.info(f"SERVER STARTED ON {ip}:{port}")
     app.run(host=ip, port=port)
 

@@ -16,7 +16,7 @@ import requests as req
 # setting optional argument parser
 parser = argparse.ArgumentParser(description='Get Hosting parameters')
 parser.add_argument('--optHost', type=str,  help='An optional Host Name')
-parser.add_argument('--optPort', type=int,  help='An optional port Number')
+parser.add_argument('--optPort', type=str,  help='An optional port Number')
 parser.add_argument('--logLevel', type=str,  help='Logging level')
 args = parser.parse_args()
 
@@ -255,11 +255,15 @@ def configLogging(logPath):
 if __name__ == '__main__':
 
     ip = "127.0.0.1"
-    port = 5001
+    port = "5001"
 
     logPath = 'python_training_API_server.log' 
     configLogging(logPath)
 
+    if args.optHost and len(args.optHost)>0:
+        ip = args.optHost
+    if args.optPort and len(args.optPort)>0:
+        port = args.optPort
 
 
     app.logger.info("SERVER STARTED ON  %s:%s"%(ip,port))
