@@ -1,3 +1,5 @@
+ <img src="https://img.shields.io/badge/application-REST%20API-yellow.svg?style=flat-square" alt="application API">  <img src="https://img.shields.io/badge/language-Python-green.svg?style=flat-square" alt="made with Python"> <img src="https://img.shields.io/badge/package-Flask-blue.svg?style=flat" alt="made with flask">
+
 # Sample API in PYTHON
 This meta project consists of sample script which can be used to create machine learning API in python which includes
 separate template for creating `preprocessing`, `training` and `prediction` API along with logging and basic error handling facility. 
@@ -15,7 +17,7 @@ separate template for creating `preprocessing`, `training` and `prediction` API 
 + The `statr.sh` scripts can be used to start all the server at one go
 
 
-## Start the PREDICTION SERVER (`/predict` API):
+## Start the PREDICTION SERVER (/predict API):
 
   +  `python prediction_API.py` OR
   +  `python prediction_API.py -h` will give the options
@@ -71,3 +73,6 @@ separate template for creating `preprocessing`, `training` and `prediction` API 
     + ``` curl http://localhost:<port number>/train --data '{"callbackURL":"http://localhost:5020/notify"}' -H "Content-Type: application/json"```
   + The above `callbackURL` is a dummy api for testing. The dummy api script is in `/testdir` folder. Run the dummy callback API `python dummy_API.py`
 
+### TODO
+
++ Add `requirement.txt` file
