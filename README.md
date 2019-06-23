@@ -1,4 +1,4 @@
- <img src="https://img.shields.io/badge/application-REST%20API-yellow.svg?style=flat-square" alt="application API">  <img src="https://img.shields.io/badge/language-Python-green.svg?style=flat-square" alt="made with Python"> <img src="https://img.shields.io/badge/package-Flask-blue.svg?style=flat" alt="made with flask">
+ <img src="https://img.shields.io/badge/application-REST%20API-yellow.svg?style=flat-square" alt="application API">  <img src="https://img.shields.io/badge/Python-3.6-green.svg?style=flat-square" alt="made with Python"> <img src="https://img.shields.io/badge/package-Flask-blue.svg?style=flat" alt="made with flask">
 
 # Sample API in PYTHON
 This meta project consists of sample script which can be used to create machine learning API in python which includes
