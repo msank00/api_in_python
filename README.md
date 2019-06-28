@@ -76,3 +76,4 @@ separate template for creating `preprocessing`, `training` and `prediction` API 
 ### TODO
 
 + Add `requirement.txt` file
++ Implement with `fastapi` [click [here](https://github.com/tiangolo/fastapi)]
