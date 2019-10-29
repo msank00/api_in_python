@@ -1,8 +1,10 @@
 # This script tries to call the MARINE and PYTHIYA/MARINE API and compare 
 #result for validation
 
-import requests
 import json
+
+import requests
+
 
 def postStatus():
 

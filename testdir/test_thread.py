@@ -1,4 +1,6 @@
-import threading, time
+import threading
+import time
+
 
 def f():
     print "f started"

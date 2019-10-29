@@ -1,12 +1,14 @@
 # This script tries to call the MARINE and PYTHIYA/MARINE API and compare 
 #result for validation
 
-import requests
-import json
-import urllib
-import numpy as np
 import gzip
+import json
 import sys
+import urllib
+
+import numpy as np
+import requests
+
 
 def call_marine(pld):
 	
