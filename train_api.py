@@ -267,7 +267,7 @@ if __name__ == "__main__":
     ip = "127.0.0.1"
     port = "5001"
 
-    logPath = "python_training_API_server.log"
+    logPath = "log/training_API_server.log"
     configLogging(logPath)
 
     if args.optHost and len(args.optHost) > 0:

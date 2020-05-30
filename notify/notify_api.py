@@ -10,7 +10,7 @@ from flask import Flask, Response, jsonify, request
 # setting optional argument parser
 parser = argparse.ArgumentParser(description="Get Hosting parameters")
 parser.add_argument("--optHost", type=str, help="An optional Host Name")
-parser.add_argument("--optPort", type=str, help="An optional port Number")
+parser.add_argument("--optPort", type=int, help="An optional port Number")
 parser.add_argument("--logLevel", type=str, help="Logging level")
 args = parser.parse_args()
 
@@ -18,9 +18,7 @@ args = parser.parse_args()
 app = Flask(__name__)
 
 
-@app.route("/predict", methods=["POST"])
-def predictionUtility():
-
+def getClientInformation(request):
     # logging client information
     app.logger.info("+++++ REQUEST RECEIVED +++++")
     req_method = request.environ["REQUEST_METHOD"]
@@ -32,44 +30,41 @@ def predictionUtility():
     app.logger.info("REQUEST API: %s" % (req_api))
     app.logger.info("HTTP USER AGENT: %s" % (req_http_user_agent))
     app.logger.info("CLIENT ADDRESS: %s" % req_remote_address)
+    return
 
+
+@app.route("/notify", methods=["POST"])
+def notifyapiUtility():
+
+    getClientInformation(request)
     try:
         # extrating data from the client request
         content = request.json  # get_json(silent=True)
-        content = json.dumps(content)
-        contentdf = pd.read_json(content, orient="records")
+        # content = json.loads(json.dumps(content))
+
+        # print content
+        # print type(content)
+
+        print(content["task_type"])
+        print(content["status_message"])
+        print(content["unix_time"])
 
         # passing data to prediction module
-        output = predictionModule(contentdf)
-        outjson = output.to_json(orient="records")
+        # output = predictionModule(contentdf)
+        # outjson = output.to_json(orient='records')
+
+        # creating the response to send back to the client
+        # resp = Response(outjson,status=200,mimetype='application/json')
+        # app.logger.info("----- REQUEST SERVED -----")
+
+        output = {"Message": "Callback status received"}
+        outjson = json.dumps(output)
 
         # creating the response to send back to the client
         resp = Response(outjson, status=200, mimetype="application/json")
         app.logger.info("----- REQUEST SERVED -----")
 
         return resp
-    except Exception as e:
-        app.logger.exception("message")
-        raise Exception(e)
-
-
-def predictionModule(inputData):
-
-    try:
-        # ====================================================
-        # all the prediction algorithm function calls goes here
-        # ====================================================
-        print(inputData)
-
-        # dummy logic to get random prediction score
-        n = inputData.shape[0]
-        app.logger.info("Number of recorde: %d" % (n))
-
-        outdf = pd.DataFrame()
-        outdf["UID"] = inputData["UID"]
-        outdf["PROBA"] = np.random.uniform(0, 1, n)
-
-        return outdf
     except Exception as e:
         app.logger.exception("message")
         raise Exception(e)
@@ -106,17 +101,11 @@ def configLogging(logPath):
 
 if __name__ == "__main__":
 
-    # change port or ip as per your choice
     ip = "127.0.0.1"
-    port = "5000"
+    port = 5020
 
-    logPath = "python_prediction_API_server.log"
+    logPath = "log/notify_api_server.log"
     configLogging(logPath)
 
-    if args.optHost and len(args.optHost) > 0:
-        ip = args.optHost
-    if args.optPort and len(args.optPort) > 0:
-        port = args.optPort
-
-    app.logger.info(f"SERVER STARTED ON {ip}:{port}")
+    app.logger.info("SERVER STARTED ON  %s:%s" % (ip, port))
     app.run(host=ip, port=port)
