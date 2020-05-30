@@ -1,14 +1,15 @@
  <img src="https://img.shields.io/badge/application-REST%20API-yellow.svg?style=flat-square" alt="application API">  <img src="https://img.shields.io/badge/Python-3.6-green.svg?style=flat-square" alt="made with Python"> <img src="https://img.shields.io/badge/package-Flask-blue.svg?style=flat" alt="made with flask">
 
-# :rocket: Simple API in PYTHON for ML project
+# :rocket: Simple Python API for ML project
 
 - This meta project consists of simple script which can be used to create machine learning API in python which includes
 separate template for creating `preprocessing`, `training` and `prediction` API along with `logging` and `basic error` handling facility. 
+- The preprocessing, training, prediction module consists dummy code which you can fill as per your wish.
 
 ## :star: Package Information
-+ package `flask`: for creating api
-+ package `logging`: for capturing the log
-+ package `threading`: for creating asynchronous function call for preprocessing and training
++ `flask`: for creating api
++ `logging`: for capturing the log
++ `threading`: for creating asynchronous function call for preprocessing and training
 
 ## :dart: Main Scripts
 
