@@ -20,7 +20,7 @@ separate template for creating `preprocessing`, `training` and `prediction` API 
 
 ----
 
-## :large_blue_diamond: Start the PREDICTION SERVER (`/predict` API):
+## :large_blue_diamond: Start Prediction server (`/predict` API):
 
   +  `python predict_api.py` OR
   +  `python predict_api.py -h` will give the options
@@ -42,7 +42,7 @@ separate template for creating `preprocessing`, `training` and `prediction` API 
 
 ----
 
-## :large_blue_diamond: Run the client from terminal
+## :large_blue_diamond: Run client from terminal
   + Following curl command can be used:
 
 ```py
@@ -54,7 +54,7 @@ curl http://localhost:<port number>/predict --data '[{"UID":"1","AGE":"15"},{"UI
 
 ----
 
-## :large_blue_diamond: Start the Training SERVER (`/preprocess` and `/train` API):
+## :large_blue_diamond: Start Training server (`/preprocess` and `/train` API):
   +  `python train_api.py` OR
   +  `python train_api.py -h` will give the options
      ```py
@@ -77,7 +77,7 @@ curl http://localhost:<port number>/predict --data '[{"UID":"1","AGE":"15"},{"UI
 
 ----
 
-## :large_blue_diamond: Run the client from the terminal 
+## :large_blue_diamond: Run client from terminal 
   - curl for preprocessing api `/preprocess`
 
 ```py
