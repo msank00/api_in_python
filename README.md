@@ -13,20 +13,20 @@ separate template for creating `preprocessing`, `training` and `prediction` API 
 
 ## :dart: Main Scripts
 
-+ The `predict_API.py` holds the actual code for prediciton module for the `/predict` api.
-+ The `train_API.py` holds the code for preprocessing and training module for the apis `/preprocess` and `/train`
-+ The `dummy_API.py` under directory `/testdir` holds the dummy scipt for `/notify` api for implementing callback facility
++ The `predict_api.py` holds the actual code for prediciton module for the `/predict` api.
++ The `train_api.py` holds the code for preprocessing and training module for the apis `/preprocess` and `/train`
++ The `notify_api.py` under directory `/testdir` holds the dummy scipt for `/notify` api for implementing callback facility
 + The `statr.sh` scripts can be used to start all the server at one go
 
 ----
 
 ## :large_blue_diamond: Start the PREDICTION SERVER (`/predict` API):
 
-  +  `python prediction_API.py` OR
-  +  `python prediction_API.py -h` will give the options
+  +  `python predict_api.py` OR
+  +  `python predict_api.py -h` will give the options
      ```py
-      python prediction_API.py -h
-      usage: prediction_API.py [-h] [--optHost OPTHOST] [--optPort OPTPORT]
+      python predict_api.py -h
+      usage: predict_api.py [-h] [--optHost OPTHOST] [--optPort OPTPORT]
                           [--logLevel LOGLEVEL]
 
       Get Hosting parameters
@@ -55,11 +55,11 @@ curl http://localhost:<port number>/predict --data '[{"UID":"1","AGE":"15"},{"UI
 ----
 
 ## :large_blue_diamond: Start the Training SERVER (`/preprocess` and `/train` API):
-  +  `python train_API.py` OR
-  +  `python train_API.py -h` will give the options
+  +  `python train_api.py` OR
+  +  `python train_api.py -h` will give the options
      ```py
-      python train_API.py -h
-      usage: train_API.py [-h] [--optHost OPTHOST] [--optPort OPTPORT]
+      python train_api.py -h
+      usage: train_api.py [-h] [--optHost OPTHOST] [--optPort OPTPORT]
                           [--logLevel LOGLEVEL]
 
       Get Hosting parameters
@@ -89,7 +89,8 @@ curl http://localhost:<port number>/preprocess --data '{"callbackURL":"http://lo
 curl http://localhost:<port number>/train --data '{"callbackURL":"http://localhost:5020/notify"}' -H "Content-Type: application/json"
 ```
 
-  + The above `callbackURL` is a `notify api` for testing the async. The `notify api` script is in `/notify` folder. Run the nority callback API from project main directory `python noitfy/notify_api.py`
+  + The above `callbackURL` is a `notify api` for testing the async. The `notify api` script is in `/notify` folder. 
+  + Run the nority callback API from _project main directory_ `python noitfy/notify_api.py`
 
 ----
 
