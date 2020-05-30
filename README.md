@@ -4,7 +4,7 @@
 
 - This meta project consists of simple script which can be used to create machine learning API in python which includes
 separate template for creating `preprocessing`, `training` and `prediction` API along with `logging` and `basic error` handling facility. 
-- The preprocessing, training, prediction module consists dummy code which you can fill as per your wish.
+- The preprocessing, training, prediction module consists of dummy code which you can fill as per your wish.
 
 ## :star: Package Information
 + `flask`: for creating api
