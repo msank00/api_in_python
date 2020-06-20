@@ -2,8 +2,8 @@
 
 # :rocket: Instructions 
 
-- Simple [Swagger](https://swagger.io/) based api generation for general machine learning tasks. The best part is the API documentation that's generated in this process and is quite helpful for users while using the APIs.
-- The swagger ui is generated using the `fast`, `light-weight` python package [fastapi](https://fastapi.tiangolo.com/).
+- Simple [Swagger](https://swagger.io/) based `API` generation for general machine learning tasks. The best part is the **API documentation**, that's generated in this process and is quite helpful for users while using the APIs.
+- The Swagger UI is generated using the `fast`, `light-weight` python package [FastAPI](https://fastapi.tiangolo.com/).
 
 The final version looks like this:
 
