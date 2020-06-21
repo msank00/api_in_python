@@ -94,11 +94,17 @@ curl http://localhost:<port number>/train --data '{"callbackURL":"http://localho
 
 ----
 
+# Swagger based api:
+
+- Kindly look into the `swagger_api` folder
+
+----
+
 ### :soon: TODO 
 
 -  [x] Add `requirement.txt` file
--  [ ] Implement with `fastapi` [click [here](https://github.com/tiangolo/fastapi)]
--  [ ] Add swagger UI
+-  [X] Implement with `fastapi` [click [here](https://github.com/tiangolo/fastapi)]
+   -  [X] Add swagger UI
 -  [ ] Add error code
 -  [ ] Add simple web UI
 
