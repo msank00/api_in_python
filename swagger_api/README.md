@@ -22,11 +22,17 @@ Then check the swagger based API documentation at:
 - link 1: [http://0.0.0.0:8032/docs](http://0.0.0.0:8032/docs)
 - link 2: [http://0.0.0.0:8032/redoc](http://0.0.0.0:8032/redoc)
 
+Before trying the `/train` and `/preprocess` api, start the `/notify` api from the parent directory as
+`python notify/notify_api.py` which will act as callback url for `/train` and `/preprocess`.
+
 # :bookmark_tabs: FastAPI Important Documentation
 
 - [Request body](https://fastapi.tiangolo.com/tutorial/body/)
 - [Add project description](https://fastapi.tiangolo.com/tutorial/metadata/)
 - [Add API Description](https://fastapi.tiangolo.com/tutorial/path-operation-configuration/)
 - [Add API example value](https://fastapi.tiangolo.com/tutorial/schema-extra-example/)
+- [Background asynchronous tasks](https://fastapi.tiangolo.com/tutorial/background-tasks/)
+  - [How to get Python FastAPI async/await functionality to work properly?](https://stackoverflow.com/questions/61316540/how-to-get-python-fastapi-async-await-functionality-to-work-properly)
+  - [Coroutines and Tasks](https://docs.python.org/3/library/asyncio-task.html)
 
 ----
