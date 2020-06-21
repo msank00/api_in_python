@@ -11,13 +11,13 @@
 
 ## :star: Simple api using `flask`
 
-- Kindly look into the `simple_api/` directory.
+- Kindly look into the `simple_api/` directory [here](https://github.com/msank00/api_in_python/tree/master/simple_api).
 
 ## :star: Swagger based api using `FastAPI`:
 
 Swagger helps for API documentation which is quite helpful and a good practice. 
 
-- Kindly look into the `swagger_api/` directory.
+- Kindly look into the `swagger_api/` directory [here](https://github.com/msank00/api_in_python/tree/master/swagger_api).
 
 ----
 
