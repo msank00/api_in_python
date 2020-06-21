@@ -13,4 +13,4 @@ kill -9 $(lsof -i:5020 -t) 2> /dev/null
 # for running the training API, uncomment the line
 python predict_API.py &
 python train_API.py &
-python testdir/dummy_api.py
+python ../testdir/notify_api.py
