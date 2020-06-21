@@ -8,13 +8,20 @@
 The final version looks like this:
 
 <center>
-<img src="assets/swagger_apip_look.png" width="600" alt="image">
+<img src="assets/swagger_pip_look.png" width="600" alt="image">
+</center>
+
+
+<center>
+<img src="assets/swagger_pip_look_2.png" width="600" alt="image">
 </center>
 
 ## :star: Start the `api` server
 
-- `cd swagger_api`
-- `uvicorn ml_api:app --reload --port 8032 --host 0.0.0.0`
+```py
+cd swagger_api
+uvicorn ml_api:app --reload --port 8032 --host 0.0.0.0
+```
 
 This will start 3 APIs, `/preprocess`, `/train`, `/predict`
 
