@@ -2,3 +2,4 @@ flask==1.0.2
 numpy==1.17.3
 pandas==0.25.3
 requests==2.22.0
+fastapi==0.55.1
