@@ -8,13 +8,16 @@
 The final version looks like this:
 
 <center>
-<img src="assets/swagger_pip_look.png" width="600" alt="image">
+<img src="assets/swagger_api_look.png" width="600" alt="image">
 </center>
 
+
+- Expanding `predict` api
 
 <center>
-<img src="assets/swagger_pip_look_2.png" width="600" alt="image">
+<img src="assets/swagger_api_look_2.png" width="600" alt="image">
 </center>
+
 
 ## :star: Start the `api` server
 
