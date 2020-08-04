@@ -35,6 +35,10 @@ Then check the swagger based API documentation at:
 Before trying the `/train` and `/preprocess` api, start the `/notify` api from the parent directory as
 `python notify/notify_api.py` which will act as callback url for `/train` and `/preprocess`.
 
+# Add custom logger:
+
+- Use logger from [uvicorn](https://stackoverflow.com/questions/60773681/how-to-do-logging-in-python-in-an-explicit-file)
+
 # :bookmark_tabs: FastAPI Important Documentation
 
 - [Request body](https://fastapi.tiangolo.com/tutorial/body/)
