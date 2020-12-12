@@ -19,6 +19,10 @@ Swagger helps for API documentation which is quite helpful and a good practice.
 
 - Kindly look into the `swagger_api/` directory [here](https://github.com/msank00/api_in_python/tree/master/swagger_api).
 
+##  :star: Override FastAPI/Uvicorn logger using Loguru
+
+- Please look [here](https://github.com/msank00/api_in_python/tree/master/fastapi_logging) 
+
 ----
 
 ### :soon: TODO 
