@@ -24,7 +24,7 @@ Swagger helps for API documentation which is quite helpful and a good practice.
 - Please look [here](https://github.com/msank00/api_in_python/tree/master/fastapi_logging) 
 
 
-##  :star: Implement `FastAPI` with `Redis` (`message queue` approach)
+##  :star: Implement `FastAPI` with `Redis` (`message queue` approach) and load-testing with `Locust`
 
 - Please look [here](https://github.com/msank00/api_in_python/tree/master/redis_api) 
 
@@ -36,7 +36,8 @@ Swagger helps for API documentation which is quite helpful and a good practice.
 -  [X] Implement with `fastapi` [click [here](https://github.com/tiangolo/fastapi)]
    -  [X] Add swagger UI
 -  [ ] Add error code
--  [ ] Add simple web UI
--  [x] Message Queue - Redis
+-  [x] Add simple web UI
+-  [x] [Message Queue - Redis](https://github.com/msank00/api_in_python/tree/master/redis_api)
+-  [x] [Load testing with Locust](https://github.com/msank00/api_in_python/tree/master/redis_api)
 
 ----
