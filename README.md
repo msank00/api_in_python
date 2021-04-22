@@ -27,6 +27,7 @@ Swagger helps for API documentation which is quite helpful and a good practice.
 ##  :star: Implement `FastAPI` with `Redis` (`message queue` approach)
 
 - Please look [here](https://github.com/msank00/api_in_python/tree/master/redis_api) 
+- [Multiple model syndrome and how to avoid them while deploying ML model using REST API](https://github.com/msank00/api_in_python/tree/master/redis_api) :zap:
 - Also includes load-testing using [Locust](https://locust.io/) :zap:
 
 ----
